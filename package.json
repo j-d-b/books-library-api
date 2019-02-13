@@ -2,10 +2,10 @@
   "name": "books-library-api",
   "version": "1.0.0",
   "description": "A simple REST API for managing books",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "start": "node src/index",
-    "develop": "nodemon src/index",
+    "start": "node lib/index",
+    "develop": "nodemon lib/index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "j-d-b <jacob@jdbrady.info>",
