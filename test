@@ -1,1 +1,3 @@
-curl -v -X POST -H "Content-Type: application/json" http://localhost:3000/books -d '{"book":"Clamdiggers Paradise"}'
+curl -v -X POST -H "Content-Type: application/json" http://localhost:3000/books -d '{"book":"Clamdiggers"}'
+curl -v -X PATCH -H "Content-Type: application/json" http://localhost:3000/books -d '{"originalBook":"Clamdiggers", "newBook":"Clamdiggers Paradise"}'
+curl -v -X DELETE -H "Content-Type: application/json" http://localhost:3000/books -d '{"book":"Clamdiggers"}'
