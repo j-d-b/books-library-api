@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
+const { DuplicateBookError, BookNotFoundError } = require('./errors');
 const getBookList = require('./getBookList');
 
 const app = express();
@@ -13,10 +14,11 @@ app.post('/books', (req, res) => {
 
   if (bookList.includes(newBook)) {
     res.status(400);
-    throw new Error('Duplicate Book: That book already exists in the library');
+    throw DuplicateBookError;
   }
 
   bookList = [...bookList, newBook];
+  console.log('After POST: ' + bookList);
   res.send({ book: newBook });
 });
 
@@ -25,10 +27,11 @@ app.delete('/books', (req, res) => {
 
   if (!bookList.includes(bookToDelete)) {
     res.status(400);
-    throw new Error('Not Found: Book does not exist in the library');
+    throw BookNotFoundError;
   }
 
   bookList = bookList.filter(book => book !== bookToDelete);
+  console.log('After DELETE: ' + bookList);
   res.status(204).send();
 });
 
@@ -37,14 +40,16 @@ app.patch('/books', (req, res) => {
 
   if (!bookList.includes(originalBook)) {
     res.status(400);
-    throw new Error('Not Found: Book does not exist in the library');
+    throw BookNotFoundError;
   }
+
   if (bookList.includes(newBook)) {
     res.status(400);
-    throw new Error('Duplicate Book: That book already exists in the library');
+    throw DuplicateBookError;
   }
 
   bookList = bookList.map(book => book === originalBook ? newBook : book);
+  console.log('After PATCH: ' + bookList);
   res.status(204).send();
 });
 
