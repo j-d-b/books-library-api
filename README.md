@@ -35,7 +35,7 @@ npm run test
 
 ## API
 * `POST` `/books`: add a book to the library by name `{ "book": "My New Book" }`
-* `DELETE` `/books/`: delete a book by name `{ "book": "My New Book" }`
+* `DELETE` `/books`: delete a book by name `{ "book": "My New Book" }`
 * `PATCH` `/books`: update an existing book/change title `{ "originalBook": "My New Book", "newBook": "My Book, Forever" }`
 * `GET` `/books`: response text is full list of books in the library, as comma-separated string
 * `PUT` `/books`: simulate database persistence. Response contains a JSON object with `"<book_title>: <ms_to_persist>"` key-value pairs
