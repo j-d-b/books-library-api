@@ -3,7 +3,7 @@ A simple REST API for a library of books, using Express.
 
 **Note:** the `booksList` variable in `app.js` stores all books and is not persisted.
 
-The `GET` and `PUT` requests use `setTimeout` to simulate asynchronous calls (and add complexity, for the sake of coding examples!);
+The `GET` and `PUT` requests use `setTimeout` to simulate asynchronous calls (and add complexity, for the sake of coding examples!).
 
 ## Usage
 Install dependencies
@@ -24,7 +24,7 @@ npm run develop
 To start the server using `nodemon`, which will reload the server when files are changed.
 
 ## Testing
-The tests for this project are basic include two unit tests and a higher-level test of functionality on the running server, in `test/app.test.js`.;
+The test suite for this project includes two unit tests and a higher-level test of functionality on the running server, in `test/app.test.js`.
 
 All tests are located in `tests/`.
 
